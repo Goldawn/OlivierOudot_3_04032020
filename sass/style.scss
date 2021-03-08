@@ -1,3 +1,8 @@
-body {
-    background-color: #555;
-}
+@use 'root';
+@use 'header';
+@use 'homepage';
+@use 'restaurant_page_template';
+@use 'footer';
+@use 'animations/loader';
+@use 'animations/loading_card';
+
