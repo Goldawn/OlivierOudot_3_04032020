@@ -11,8 +11,8 @@ h2 {
     font-size: 2.5rem;
 }
   
-h3 {
-    font-size: 1.7rem;
+h3, h4 {
+    font-size: 1.65rem;
 }
   
 a, a:hover, a:focus, a:active {
@@ -21,19 +21,32 @@ a, a:hover, a:focus, a:active {
 }
   
 .mobile_width {
-    width: 375px;
+    min-width: 375px;
+    width: 100%;
+    height: 100vh;   
+}
+
+.overflow_anim {
+    overflow: hidden;
+    animation: loader_overflow .5s 6s forwards;
 }
 
 body {
     &:not(div) {
         margin: 0;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: rgb(61, 64, 109);
+        background-color: #fff;
     }
+    
     &>div {
         display: flex;
         flex-direction: column;
     }
+}
+
+.grey-bg {
+    background-color: #f6f6f6;
 }
