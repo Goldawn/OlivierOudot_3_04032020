@@ -1,9 +1,17 @@
 footer {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
     background-color: #353535;
-    color: white;
-    padding: 25px;
+    color: white; 
+    display: flex;
+    justify-content: center;
+
+    #footer_align {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1440px;
+        padding: 25px;
+    }
 
     img {
         filter: invert(1);

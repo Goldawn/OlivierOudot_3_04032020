@@ -11,8 +11,8 @@ h2 {
   font-size: 2.5rem;
 }
 
-h3 {
-  font-size: 1.7rem;
+h3, h4 {
+  font-size: 1.65rem;
 }
 
 a, a:hover, a:focus, a:active {
@@ -21,45 +21,80 @@ a, a:hover, a:focus, a:active {
 }
 
 .mobile_width {
-  width: 375px;
+  min-width: 375px;
+  width: 100%;
+  height: 100vh;
+}
+
+.overflow_anim {
+  overflow: hidden;
+  animation: loader_overflow 0.5s 6s forwards;
 }
 
 body:not(div) {
   margin: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #3d406d;
+  background-color: #fff;
 }
 body > div {
   display: flex;
   flex-direction: column;
 }
 
+.grey-bg {
+  background-color: #f6f6f6;
+}
+
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 65px;
+  width: 100%;
+  min-height: 65px;
   box-shadow: 0px 3px 8px 0px rgba(200, 200, 200, 0.88);
   z-index: 2;
   background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header picture {
   width: 45%;
+  max-width: 200px;
 }
 header picture img {
   width: 100%;
 }
+header #header_align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+}
+header #header_align .localisation_in_header {
+  width: 200px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+header #header_align .localisation_in_header p i {
+  margin-right: 10px;
+}
+header .fa-arrow-left {
+  position: absolute;
+  left: 20px;
+  top: 21px;
+  font-size: 2.3rem;
+}
 
-#localisation {
+.localisation {
   height: 45px;
   background-color: #eaeaea;
   text-align: center;
   font-weight: 600;
   color: #353535;
 }
-#localisation i {
+.localisation i {
   transform: translateX(-15px);
 }
 
@@ -81,7 +116,7 @@ button {
   border: none;
   border-radius: 25px;
   color: #fff;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
 }
 button:focus {
@@ -95,7 +130,10 @@ button:focus {
 #fonctionnement h2 {
   transform: translateX(-10px);
 }
-#fonctionnement article {
+#fonctionnement .article_container {
+  width: 100%;
+}
+#fonctionnement .article_container article {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -109,13 +147,13 @@ button:focus {
   border-radius: 25px;
   font-weight: 600;
 }
-#fonctionnement article:hover {
+#fonctionnement .article_container article:hover {
   background-color: #f5edff;
 }
-#fonctionnement article:hover i {
+#fonctionnement .article_container article:hover i {
   color: #9356dc;
 }
-#fonctionnement article div:first-child {
+#fonctionnement .article_container article div:first-child {
   position: absolute;
   left: -12px;
   width: 23px;
@@ -128,7 +166,13 @@ button:focus {
   justify-content: center;
   align-items: center;
 }
-#fonctionnement div {
+#fonctionnement .article_container article div:first-child p {
+  font-size: 1.3rem;
+}
+#fonctionnement .article_container article div:nth-child(2) i {
+  font-size: 2rem;
+}
+#fonctionnement .article_container div {
   position: absolute;
   left: 11%;
   color: #7e7e7e;
@@ -189,6 +233,13 @@ button:focus {
 .picture_legend div p {
   margin: 0;
 }
+.picture_legend div p:first-child {
+  font-size: 1.85rem;
+}
+.picture_legend div p:last-child {
+  font-size: 1.7rem;
+  font-weight: 300;
+}
 .picture_legend i {
   font-size: 2.3rem;
 }
@@ -220,20 +271,27 @@ button:focus {
 }
 
 .enseigne_large_pic img {
-  width: 100%;
   height: 255px;
+  width: 100%;
   object-fit: cover;
 }
 
 #section_and_footer {
-  position: absolute;
-  top: 280px;
+  position: relative;
+  margin-top: -40px;
+}
+
+#enseigne {
+  display: flex;
+  justify-content: center;
 }
 
 #enseigne_box {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
   padding: 30px 15px 80px 15px;
+  width: 100%;
+  max-width: 1440px;
 }
 #enseigne_box h2 {
   font-family: "Shrikhand", cursive;
@@ -262,10 +320,10 @@ button:focus {
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
-  animation: loading-restaurant-cards 1s 0.5s;
+  animation: loading-restaurant-cards 1.5s;
 }
 #enseigne_box article:hover .article_visible {
-  width: 82%;
+  width: calc(100% - 62px);
 }
 #enseigne_box article:hover .article_hidden i {
   transform: rotate(720deg);
@@ -274,7 +332,7 @@ button:focus {
   margin: 0;
 }
 #enseigne_box article h4, #enseigne_box article .article_text-price p:first-child {
-  margin-right: 15px;
+  margin-right: 12px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -286,6 +344,9 @@ button:focus {
   align-items: center;
   justify-content: space-between;
 }
+#enseigne_box #enseigne_title_box .fill-in_heart i {
+  font-size: 2.5rem;
+}
 #enseigne_box section a:last-child article {
   margin-bottom: 40px;
 }
@@ -294,6 +355,7 @@ button:focus {
 }
 #enseigne_box #button_box button {
   width: 55%;
+  max-width: 350px;
 }
 
 .article_visible {
@@ -304,12 +366,14 @@ button:focus {
   justify-content: space-between;
   transition: linear width 500ms;
   position: relative;
-  /* animation-duration: 1s; */
 }
 .article_visible div:not(:last-child) {
   display: flex;
   justify-content: space-between;
   padding: 0 15px;
+}
+.article_visible .article_text-price p:first-child {
+  font-size: 1.45rem;
 }
 .article_visible .article_text-price p:last-child {
   font-weight: 600;
@@ -326,7 +390,6 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #99e2d0;
 }
 .article_visible .article_hidden i {
   transition: transform 500ms;
@@ -342,10 +405,17 @@ button:focus {
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   background-color: #353535;
   color: white;
+  display: flex;
+  justify-content: center;
+}
+footer #footer_align {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1440px;
   padding: 25px;
 }
 footer img {
@@ -362,18 +432,26 @@ footer i {
   width: 30px;
 }
 
+#loader_wrapper_container {
+  position: relative;
+}
+
 #loader_wrapper {
-  height: 375px;
-  background-color: #333;
+  height: 100vh;
+  animation: fade-out_loader 0.5s 6s forwards;
+  z-index: 999999;
+  background-color: rgba(50, 50, 50, 0.95);
   color: #fff;
   display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 #loader_wrapper #loader_box {
   margin: auto;
   position: relative;
   width: 100px;
   height: 100px;
-  /* border: 2px solid white; */
   border-top: 2px solid rgba(157, 89, 220, 0.8);
   border-bottom: 2px solid #eb73db;
   border-radius: 50%;
@@ -394,11 +472,9 @@ footer i {
   animation: loader-animation-switch-ico 6s infinite;
 }
 #loader_wrapper #loader_box .fa-hotdog {
-  /* opacity: 0; */
   animation: loader-animation-switch-ico 6s 2s infinite;
 }
 #loader_wrapper #loader_box .fa-pizza-slice {
-  /* opacity: 0; */
   animation: loader-animation-switch-ico 6s 4s infinite;
 }
 
@@ -434,6 +510,26 @@ footer i {
     font-size: 2rem;
   }
 }
+@keyframes fade-out_loader {
+  0% {
+    height: 100vh;
+    opacity: 1;
+    z-index: 999999;
+  }
+  100% {
+    height: 0vh;
+    opacity: 0;
+    z-index: -2;
+  }
+}
+@keyframes loader_overflow {
+  from {
+    overflow: hidden;
+  }
+  to {
+    overflow: visible;
+  }
+}
 @keyframes loading-restaurant-cards {
   0% {
     opacity: 0;
@@ -442,6 +538,86 @@ footer i {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media screen {
+  .localisation_in_header {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .article_container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .article_container a {
+    width: 48%;
+  }
+
+  .column_center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .column_center a {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header #header_align {
+    justify-content: space-between;
+  }
+  header #header_align .localisation_in_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header #header_align picture, header #header_align div {
+    margin: 0 20px;
+  }
+
+  .localisation {
+    display: none;
+  }
+
+  #fonctionnement .article_container.column_center {
+    flex-direction: row;
+  }
+  #fonctionnement .article_container.column_center a {
+    width: 30%;
+  }
+  #fonctionnement .article_container.column_center a article div:first-child {
+    top: -12px;
+    left: 50%;
+    transform: translateX(-12px);
+  }
+
+  #restaurants .picture_container {
+    height: 25vw;
+    max-height: 350px;
+  }
+  #restaurants .picture_container img {
+    height: 80%;
+  }
+
+  #enseigne .article_container a {
+    width: 32.5%;
+  }
+
+  .enseigne_large_pic img {
+    height: 100%;
+    max-height: 25vw;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .width_container {
+    max-width: 1440px;
+  }
+
+  #fonctionnement {
+    border-radius: 25px;
+    margin: 0 20px;
   }
 }
 
