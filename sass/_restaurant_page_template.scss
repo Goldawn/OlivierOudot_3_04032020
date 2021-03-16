@@ -1,3 +1,5 @@
+@import 'mixins';
+
 .enseigne_large_pic img {
     height: 255px;    
     width: 100%;
@@ -51,14 +53,17 @@
         flex-direction: row;
         justify-content: space-between;
         overflow: hidden;
-        animation: loading-restaurant-cards 1.5s;
 
+        &.hidden {
+            opacity: 0;
+            transform: translateY(50px);
+        }
         &:hover .article_visible{
             width: calc(100% - 62px);
         }
 
         &:hover .article_hidden i {
-            transform: rotate(720deg);
+            animation: slide-in_card_box .5s .1s forwards;
         }
 
         p, h4 {
@@ -137,10 +142,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        i {
-            transition: transform 500ms;
-        }
 
         div {
             background-color: #fff;

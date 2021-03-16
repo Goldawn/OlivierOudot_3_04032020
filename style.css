@@ -320,13 +320,16 @@ button:focus {
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
-  animation: loading-restaurant-cards 1.5s;
+}
+#enseigne_box article.hidden {
+  opacity: 0;
+  transform: translateY(50px);
 }
 #enseigne_box article:hover .article_visible {
   width: calc(100% - 62px);
 }
 #enseigne_box article:hover .article_hidden i {
-  transform: rotate(720deg);
+  animation: slide-in_card_box 0.5s 0.1s forwards;
 }
 #enseigne_box article p, #enseigne_box article h4 {
   margin: 0;
@@ -391,9 +394,6 @@ button:focus {
   justify-content: center;
   align-items: center;
 }
-.article_visible .article_hidden i {
-  transition: transform 500ms;
-}
 .article_visible .article_hidden div {
   background-color: #fff;
   border-radius: 50%;
@@ -426,29 +426,32 @@ footer img {
 footer a {
   margin: 5px 0;
   font-weight: 400;
+  width: fit-content;
 }
 footer i {
   font-size: 15px;
   width: 30px;
 }
 
-#loader_wrapper_container {
-  position: relative;
-}
-
 #loader_wrapper {
   height: 100vh;
   animation: fade-out_loader 0.5s 6s forwards;
   z-index: 999999;
-  background-color: rgba(50, 50, 50, 0.95);
+  background-color: rgba(31, 31, 31, 0.95);
   color: #fff;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   left: 0;
   right: 0;
 }
+#loader_wrapper picture {
+  filter: invert(0.9);
+  margin-bottom: 20px;
+}
 #loader_wrapper #loader_box {
-  margin: auto;
   position: relative;
   width: 100px;
   height: 100px;
@@ -540,6 +543,54 @@ footer i {
     transform: translateY(0);
   }
 }
+@keyframes slide-in_card_box {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.delay-0 {
+  animation: loading-restaurant-cards 1s 0s forwards;
+}
+
+.delay-1 {
+  animation: loading-restaurant-cards 1s 0.25s forwards;
+}
+
+.delay-2 {
+  animation: loading-restaurant-cards 1s 0.5s forwards;
+}
+
+.delay-3 {
+  animation: loading-restaurant-cards 1s 0.75s forwards;
+}
+
+.delay-4 {
+  animation: loading-restaurant-cards 1s 1s forwards;
+}
+
+.delay-5 {
+  animation: loading-restaurant-cards 1s 1.25s forwards;
+}
+
+.delay-6 {
+  animation: loading-restaurant-cards 1s 1.5s forwards;
+}
+
+.delay-7 {
+  animation: loading-restaurant-cards 1s 1.75s forwards;
+}
+
+.delay-8 {
+  animation: loading-restaurant-cards 1s 2s forwards;
+}
+
+.delay-9 {
+  animation: loading-restaurant-cards 1s 2.25s forwards;
+}
+
 @media screen {
   .localisation_in_header {
     display: none;
