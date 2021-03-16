@@ -1,20 +1,23 @@
-#loader_wrapper_container {
-  position: relative;
-}
-
 #loader_wrapper {
     height: 100vh;
     animation: fade-out_loader .5s 6s forwards;
     z-index: 999999;
-    background-color:rgba(50,50,50,.95);
+    background-color:rgba(31, 31, 31, 0.95);
     color: #fff;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     left: 0;
     right: 0;
-    
+
+    picture { 
+      filter: invert(.9);
+      margin-bottom: 20px;
+    }
+
     #loader_box {
-        margin: auto;
         position: relative;
         width: 100px;
         height: 100px;

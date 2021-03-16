@@ -8,3 +8,12 @@
       transform: translateY(0);
     }
 }
+
+@keyframes slide-in_card_box {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

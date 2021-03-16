@@ -1,0 +1,3 @@
+@mixin fadeIn($delay: 0) {
+    animation: loading-restaurant-cards 1s #{$delay}s forwards;
+}
