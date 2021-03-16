@@ -1,3 +1,8 @@
+:root {
+  --primary-color: #9356dc;
+  --secondary-color: #99e2d0;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -151,15 +156,15 @@ button:focus {
   background-color: #f5edff;
 }
 #fonctionnement .article_container article:hover i {
-  color: #9356dc;
+  color: var(--primary-color);
 }
 #fonctionnement .article_container article div:first-child {
   position: absolute;
   left: -12px;
   width: 23px;
   height: 23px;
-  border: 1px solid #9356dc;
-  background-color: #9356dc;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
   border-radius: 50%;
   color: #fff;
   display: flex;
@@ -196,7 +201,7 @@ button:focus {
   position: absolute;
   right: 12px;
   top: 12px;
-  background-color: #99e2d0;
+  background-color: var(--secondary-color);
   color: #008766;
   padding: 6px 13px;
   border-radius: 3px;
@@ -306,7 +311,7 @@ button:focus {
 #enseigne_box .title_underline {
   width: 40px;
   height: 3px;
-  background-color: #99e2d0;
+  background-color: var(--secondary-color);
   margin: 5px 0 13px 0;
 }
 #enseigne_box article {
@@ -387,9 +392,9 @@ button:focus {
   left: 100%;
   width: 62px;
   height: 100%;
-  background-color: #99e2d0;
+  background-color: var(--secondary-color);
   border-radius: 0 15px 15px 0;
-  color: #99e2d0;
+  color: var(--secondary-color);
   display: flex;
   justify-content: center;
   align-items: center;

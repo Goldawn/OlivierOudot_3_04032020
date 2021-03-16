@@ -38,7 +38,7 @@
     .title_underline {
         width: 40px;
         height: 3px;
-        background-color: #99e2d0;
+        background-color: var(--secondary-color);
         margin: 5px 0 13px 0;
     }
     
@@ -136,9 +136,9 @@
         left: 100%;
         width: 62px;
         height: 100%;
-        background-color: #99e2d0;
+        background-color: var(--secondary-color);
         border-radius: 0 15px 15px 0;
-        color: #99e2d0;
+        color: var(--secondary-color);
         display: flex;
         justify-content: center;
         align-items: center;
