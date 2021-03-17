@@ -12,6 +12,13 @@ html {
   font-size: 1.6rem;
 }
 
+h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 3.8rem;
+  font-weight: 400;
+  margin: 0;
+}
+
 h2 {
   font-size: 2.5rem;
 }
@@ -62,13 +69,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-header picture {
-  width: 45%;
-  max-width: 200px;
-}
-header picture img {
-  width: 100%;
 }
 header #header_align {
   display: flex;
