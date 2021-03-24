@@ -4,6 +4,12 @@
     }
 }
 
+@media screen and ( max-width: 375px){
+    #fonctionnement .article_container .steps div:nth-child(2) i {
+        font-size: 1.4rem;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .article_container {
         display: flex;
@@ -24,7 +30,6 @@
             width: 60%;
         }
     }
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -50,7 +55,7 @@
         a {
             width: 30%;
 
-            article div:first-child {
+            .steps div:first-child {
                 top: -12px;
                 left: 50%;
                 transform: translateX(-12px);

@@ -33,7 +33,7 @@ a, a:hover, a:focus, a:active {
 }
 
 .mobile_width {
-  min-width: 375px;
+  min-width: 320px;
   width: 100%;
   height: 100vh;
 }
@@ -107,13 +107,20 @@ header .fa-arrow-left {
   text-align: center;
   background-color: #f6f6f6;
   padding: 20px 40px 55px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #reservation h3 {
   font-weight: 300;
 }
 
-button {
+.button {
+  width: 200px;
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(173deg, #eb73da 20%, #9d59dc 100%);
   box-shadow: 0px 4px 5px 0px rgba(210, 210, 210, 0.88);
   margin-top: 18px;
@@ -124,7 +131,7 @@ button {
   font-weight: 500;
   cursor: pointer;
 }
-button:focus {
+.button:focus {
   outline: 0;
 }
 
@@ -138,7 +145,7 @@ button:focus {
 #fonctionnement .article_container {
   width: 100%;
 }
-#fonctionnement .article_container article {
+#fonctionnement .article_container .steps {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -152,13 +159,13 @@ button:focus {
   border-radius: 25px;
   font-weight: 600;
 }
-#fonctionnement .article_container article:hover {
+#fonctionnement .article_container .steps:hover {
   background-color: #f5edff;
 }
-#fonctionnement .article_container article:hover i {
+#fonctionnement .article_container .steps:hover i {
   color: var(--primary-color);
 }
-#fonctionnement .article_container article div:first-child {
+#fonctionnement .article_container .steps div:first-child {
   position: absolute;
   left: -12px;
   width: 23px;
@@ -171,13 +178,13 @@ button:focus {
   justify-content: center;
   align-items: center;
 }
-#fonctionnement .article_container article div:first-child p {
+#fonctionnement .article_container .steps div:first-child p {
   font-size: 1.3rem;
 }
-#fonctionnement .article_container article div:nth-child(2) i {
+#fonctionnement .article_container .steps div:nth-child(2) i {
   font-size: 2rem;
 }
-#fonctionnement .article_container div {
+#fonctionnement .article_container .steps div {
   position: absolute;
   left: 11%;
   color: #7e7e7e;
@@ -187,11 +194,13 @@ button:focus {
   background-color: #f6f6f6;
   padding: 35px 20px 45px 20px;
 }
-#restaurants article {
+#restaurants .restaurant-card {
   margin-bottom: 20px;
 }
-#restaurants article div p:first-child {
+#restaurants .restaurant-card h3 {
   font-weight: 700;
+  margin: 0;
+  font-size: 1.93rem;
 }
 #restaurants .picture_container {
   height: 255px;
@@ -237,11 +246,6 @@ button:focus {
 }
 .picture_legend div p {
   margin: 0;
-}
-.picture_legend div p:first-child {
-  font-size: 1.85rem;
-}
-.picture_legend div p:last-child {
   font-size: 1.7rem;
   font-weight: 300;
 }
@@ -295,7 +299,7 @@ button:focus {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
   padding: 30px 15px 80px 15px;
-  width: 100%;
+  width: calc(100% - 30px);
   max-width: 1440px;
 }
 #enseigne_box h2 {
@@ -314,7 +318,7 @@ button:focus {
   background-color: var(--secondary-color);
   margin: 5px 0 13px 0;
 }
-#enseigne_box article {
+#enseigne_box .menu-card {
   width: 100%;
   height: 70px;
   background-color: #fff;
@@ -326,20 +330,20 @@ button:focus {
   justify-content: space-between;
   overflow: hidden;
 }
-#enseigne_box article.hidden {
+#enseigne_box .menu-card.hidden {
   opacity: 0;
   transform: translateY(50px);
 }
-#enseigne_box article:hover .article_visible {
+#enseigne_box .menu-card:hover .article_visible {
   width: calc(100% - 62px);
 }
-#enseigne_box article:hover .article_hidden i {
+#enseigne_box .menu-card:hover .article_hidden i {
   animation: slide-in_card_box 0.5s 0.1s forwards;
 }
-#enseigne_box article p, #enseigne_box article h4 {
+#enseigne_box .menu-card p, #enseigne_box .menu-card h4 {
   margin: 0;
 }
-#enseigne_box article h4, #enseigne_box article .article_text-price p:first-child {
+#enseigne_box .menu-card h4, #enseigne_box .menu-card .article_text-price p:first-child {
   margin-right: 12px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -359,7 +363,8 @@ button:focus {
   margin-bottom: 40px;
 }
 #enseigne_box #button_box {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 #enseigne_box #button_box button {
   width: 55%;
@@ -601,6 +606,11 @@ footer i {
     display: none;
   }
 }
+@media screen and (max-width: 375px) {
+  #fonctionnement .article_container .steps div:nth-child(2) i {
+    font-size: 1.4rem;
+  }
+}
 @media screen and (min-width: 768px) {
   .article_container {
     display: flex;
@@ -643,7 +653,7 @@ footer i {
   #fonctionnement .article_container.column_center a {
     width: 30%;
   }
-  #fonctionnement .article_container.column_center a article div:first-child {
+  #fonctionnement .article_container.column_center a .steps div:first-child {
     top: -12px;
     left: 50%;
     transform: translateX(-12px);
